@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Ticket</title>
+
+    <style>
+        body{
+            font-family:Arial, sans-serif;
+            margin:0;
+            padding:30px;
+            text-align:center;
+            color:white;
+
+            /* ✅ SMOOTH BLENDED GRADIENT (NO LINES) */
+            background: linear-gradient(135deg,
+                #ff512f 0%,
+                #f9d423 35%,
+                #ff4e50 70%,
+                #ff9800 100%
+            );
+
+            min-height:100vh;
+        }
+
+        h1{
+            margin-bottom:25px;
+        }
+
+        form{
+            display:flex;
+            flex-direction:column;
+            width:280px;
+            margin:auto;
+            gap:15px;
+
+            background:rgba(0,0,0,0.25);
+            padding:25px;
+            border-radius:15px;
+        }
+
+        input{
+            padding:10px;
+            border:none;
+            border-radius:8px;
+            outline:none;
+        }
+
+        button{
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            background:#000;
+            color:white;
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🎟️ Book Your Ticket</h1>
+
+<form id="bookingForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="tel" id="mobile" placeholder="Mobile" required>
+
+    <button type="submit">Confirm Booking</button>
+</form>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    localStorage.setItem("name", document.getElementById("name").value);
+    localStorage.setItem("email", document.getElementById("email").value);
+    localStorage.setItem("mobile", document.getElementById("mobile").value);
+
+    window.location.href = "success.html";
+});
+</script>
+
+</body>
+</html>

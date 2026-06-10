@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Details</title>
+
+<style>
+body{
+    font-family:Arial, sans-serif;
+    text-align:center;
+    padding:20px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color:white;
+}
+
+img{
+    width:300px;
+    height:450px;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:#e50914;
+}
+
+p{
+    font-size:18px;
+    max-width:600px;
+    margin:20px auto;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    background:#e50914;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+</style>
+</head>
+<body>
+
+<h1 id="movieTitle"></h1>
+
+<img id="movieImage" src="" alt="Movie">
+
+<p>
+    Enjoy this exciting movie filled with action, adventure, and entertainment.
+</p>
+
+<button onclick="location.href='booking.html'">
+    Book Seat
+</button>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const movie = params.get("movie");
+const name = params.get("name");
+
+document.getElementById("movieImage").src = movie;
+document.getElementById("movieTitle").innerText = name;
+</script>
+
+</body>
+</html>

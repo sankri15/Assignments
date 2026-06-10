@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Success</title>
+
+    <style>
+        body{
+            font-family:Arial, sans-serif;
+            margin:0;
+            padding:30px;
+            text-align:center;
+            color:white;
+
+            /* ✅ SMOOTH CELEBRATION GRADIENT */
+            background: linear-gradient(135deg,
+                #ffb347 0%,
+                #ffcc33 30%,
+                #ff9966 65%,
+                #ff5e62 100%
+            );
+
+            min-height:100vh;
+        }
+
+        h1{
+            margin-bottom:20px;
+        }
+
+        .ticket{
+            width:300px;
+            margin:auto;
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+
+            background:rgba(0,0,0,0.3);
+            padding:25px;
+            border-radius:15px;
+        }
+
+        .ticket div{
+            background:rgba(255,255,255,0.15);
+            padding:10px;
+            border-radius:8px;
+        }
+
+        button{
+            margin-top:20px;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            background:#000;
+            color:white;
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🎉 Booking Confirmed</h1>
+
+<div class="ticket">
+    <div id="bookingId"></div>
+    <div id="userName"></div>
+    <div id="userEmail"></div>
+    <div id="userMobile"></div>
+</div>
+
+<button onclick="location.href='index.html'">Go Home</button>
+
+<script>
+const name = localStorage.getItem("name");
+const email = localStorage.getItem("email");
+const mobile = localStorage.getItem("mobile");
+
+const bookingId = "BK" + Math.floor(Math.random() * 1000000);
+
+document.getElementById("bookingId").innerText = "Booking ID: " + bookingId;
+document.getElementById("userName").innerText = "Name: " + name;
+document.getElementById("userEmail").innerText = "Email: " + email;
+document.getElementById("userMobile").innerText = "Mobile: " + mobile;
+</script>
+
+</body>
+</html>
