@@ -6,6 +6,43 @@ Note: Do not modify the HTML code
 
 Note: width and height which are passed as arguments to the createDiv function do not contain the unit. Make sure to add the unit of "px" to it before setting the values -->
 
-<div id="container">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Div Generator</title>
 
-</div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #container {
+            border: 2px solid black;
+            padding: 15px;
+            min-height: 200px;
+            background: #f9f9f9;
+        }
+
+        .box {
+            margin: 10px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Div Generator</h2>
+
+<div id="container"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
